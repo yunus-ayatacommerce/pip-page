@@ -1,0 +1,45 @@
+// _variables.scss
+
+// Colors
+$primary-verylight: #FFF0D6;   // Bootstrap primary blue
+$primary-light: #FFC25A;
+$primary:#FFA100;
+$primary-dark: #FF8A00;
+
+$secondary-verylight: #E9E9E9;
+$secondary-light:#A7A6A6;
+$secondary:#1E1E1E;
+$secondary-dark: #000000;
+
+$accent-verylight: #FFF8DF;
+$accent-light: #FFEEB5;
+$accent: #FFD95C;
+$accent-dark: #FFC500;
+$light-text:#212121;
+
+//Typography
+$font-family-base: 'fira sans', 'Roboto', sans-serif;
+$font-size-base: 16px;
+$font-weight-normal: 400;
+$font-weight-bold: 600;
+$line-height-base: 1.6;
+
+$h1-size: 2.5rem;
+$h2-size: 2rem;
+$h3-size: 1.75rem;
+$h4-size: 1.5rem;
+$h5-size: 1.25rem;
+$h6-size: 1rem;
+
+//  Spacing scale
+$spacing-unit: 1rem;
+
+// Shadows, radii, transitions
+$radius-sm: 4px;
+$radius-md: 8px;
+$shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+$transition-base: all 0.2s ease-in-out;
+
+//logo-size
+
+$logo-width-desktop: 180px;

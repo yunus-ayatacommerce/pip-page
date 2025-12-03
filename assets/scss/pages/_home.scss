@@ -1,0 +1,16 @@
+// _home.scss - page-specific styles
+.hero {
+  padding: 3rem 0;
+  text-align: center;
+
+  h1 {
+    margin: 0 0 1rem;
+    font-size: 2rem;
+  }
+
+  p { margin: 0 0 1.5rem; color: darken($primary-color, 20%); }
+}
+
+@include respond-to(tablet) {
+  .hero { padding: 4rem 0; }
+}

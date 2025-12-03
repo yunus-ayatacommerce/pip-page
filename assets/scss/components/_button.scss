@@ -1,0 +1,18 @@
+// _button.scss
+.btn {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: $radius-sm;
+  border: none;
+  background: $primary-color;
+  color: white;
+  cursor: pointer;
+}
+
+.btn--outline {
+  background: transparent;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+}

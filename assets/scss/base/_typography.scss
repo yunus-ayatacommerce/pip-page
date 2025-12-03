@@ -1,0 +1,41 @@
+// _typography.scss
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: #212529; // Default text color
+  font-weight: $font-weight-normal;
+  background-color: #fff;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight-bold;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+  color: #111;
+}
+
+h1 { font-size: $h1-size; }
+h2 { font-size: $h2-size; }
+h3 { font-size: $h3-size; }
+h4 { font-size: $h4-size; }
+h5 { font-size: $h5-size; }
+h6 { font-size: $h6-size; }
+
+// Paragraphs and links
+p {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: darken($primary-color, 10%);
+  }
+}
