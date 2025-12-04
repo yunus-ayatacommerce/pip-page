@@ -1030,6 +1030,101 @@ hr {
   display: none !important;
 }
 
+/* --- NEW: ZOOM MODAL STYLES --- */
+/* Modal Backdrop */
+.zoom-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 2000; /* Ensure it's above everything */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+/* Modal Content (Image Container) */
+.zoom-modal-content {
+  margin: auto;
+  display: block;
+  width: 90%;
+  max-width: 900px;
+  position: relative;
+  padding: 20px;
+}
+
+/* The Zoomed Image */
+#zoomed-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  background-color: #fff; /* White background for the image */
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Close Button */
+.zoom-close-button {
+  position: absolute;
+  top: -20px;
+  right: 0px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.zoom-close-button:hover,
+.zoom-close-button:focus {
+  color: #ff8a00;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* --- NEW: MOBILE ZOOM BUTTON STYLES --- */
+.mobile-feature-image {
+  /* Keep existing styles */
+  position: relative; /* Essential for button positioning */
+}
+
+.zoom-button {
+  position: absolute;
+  top: 340px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.8); /* Orange with slight transparency */
+  color: #fff;
+  border: none;
+  border-radius: 5%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 0;
+  transition: background-color 0.2s;
+  /* Initially hidden for desktop */
+  display: none;
+}
+
+.zoom-button:hover {
+  background-color: #cc7a00;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 991.98px) {
+  /* Make the zoom button visible ONLY on mobile/tablet */
+  .zoom-button {
+    display: flex; /* Override the default 'none' */
+  }
+}
 /* Ensures custom images fit properly */
 .card-img-custom {
   max-height: 200px;

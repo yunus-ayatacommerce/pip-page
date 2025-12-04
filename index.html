@@ -744,21 +744,21 @@
 
     <!--AC-253 starts here-->
 
-    <div class="wrapper-bg">
-        <div class="row justify-content-center m-0">
-            <div class="col-12 col-lg-10 text-center mb-3">
-                <span class="custom-badge-top p-2 rounded-1 d-inline-block mb-3 fst-italic">Lets every Transaction tell
-                    your brand story</span>
-                <h1 class="display-5 fw-bold">The InvoTools Difference</h1>
-                <p class="col-lg-8 mx-auto">
-                    See how InvoTools transforms traditional invoicing challenges into smart, efficient and revenue
-                    generating opportunities.
-                </p>
-            </div>
+   <div class="wrapper-bg">
+    <div class="row justify-content-center m-0">
+        <div class="col-12 col-lg-10 text-center mb-3">
+            <span class="custom-badge-top p-2 rounded-1 d-inline-block mb-3 fst-italic">Lets every Transaction tell
+                your brand story</span>
+            <h1 class="display-5 fw-bold">The InvoTools Difference</h1>
+            <p class="col-lg-8 mx-auto">
+                See how InvoTools transforms traditional invoicing challenges into smart, efficient and revenue
+                generating opportunities.
+            </p>
         </div>
+    </div>
 
-        <div class="container my-1">
-            <div class="orange-wrapper">
+    <div class="container my-1">
+        <div class="orange-wrapper">
             <div class="row">
                 <div class="col-12 col-lg-6 features-horizontal-scroll">
                     <div class="comparison-heading d-none d-lg-flex align-items-center">
@@ -787,6 +787,7 @@
                         </div>
 
                         <div class="mobile-feature-image">
+                            <button class="zoom-button"><i class="bi bi-zoom-in"></i></button>
                             <img src="./assets/images/251/Marketplace-image.png" alt="Invoice Preview">
                         </div>
 
@@ -813,6 +814,7 @@
                         </div>
 
                         <div class="mobile-feature-image">
+                            <button class="zoom-button"><i class="bi bi-zoom-in"></i></button>
                             <img src="./assets/images/251/img005.png" alt="Language Config">
                         </div>
                         <span class="arrow-icon fs-4"><i class="bi bi-chevron-right"></i></span>
@@ -838,6 +840,7 @@
                         </div>
 
                         <div class="mobile-feature-image">
+                            <button class="zoom-button"><i class="bi bi-zoom-in"></i></button>
                             <img src="./assets/images/251/img005.png" alt="Customer Portal">
                         </div>
                         <span class="arrow-icon fs-4"><i class="bi bi-chevron-right"></i></span>
@@ -863,6 +866,7 @@
                         </div>
 
                         <div class="mobile-feature-image">
+                            <button class="zoom-button"><i class="bi bi-zoom-in"></i></button>
                             <img src="./assets/images/251/img003.png" alt="Popup Config">
                         </div>
                         <span class="arrow-icon fs-4"><i class="bi bi-chevron-right"></i></span>
@@ -888,6 +892,7 @@
                         </div>
 
                         <div class="mobile-feature-image">
+                            <button class="zoom-button"><i class="bi bi-zoom-in"></i></button>
                             <img src="./assets/images/receipt.png" alt="Report View">
                         </div>
                         <span class="arrow-icon fs-4"><i class="bi bi-chevron-right"></i></span>
@@ -911,18 +916,22 @@
                     </div>
                 </div>
             </div>
-            </div>
         </div>
     </div>
+</div>
 
-    <script>
+<div id="image-zoom-modal" class="zoom-modal">
+    <div class="zoom-modal-content">
+        <span class="zoom-close-button">&times;</span>
+        <img id="zoomed-image" src="" alt="Zoomed View">
+    </div>
+</div>
+<script>
     document.addEventListener('DOMContentLoaded', function () {
         const featureItems = document.querySelectorAll('.feature-item');
         const showcaseImages = document.querySelectorAll('.showcase-image');
-        // 1. Get the breadcrumb element (Desktop)
         const breadcrumbElement = document.getElementById('image-breadcrumb-desktop');
 
-        // Total number of images (should be 5 based on your HTML)
         const totalImages = showcaseImages.length;
 
         /**
@@ -931,9 +940,7 @@
          */
         function updateBreadcrumb(activeIndex) {
             if (breadcrumbElement) {
-                // Update the text: "Active Index + 1" (since indexes are 0-based) of "Total Images"
-                // Example: 0 index becomes "1 of 5 Images"
-                breadcrumbElement.querySelector('.breadcrumb-text').textContent = 
+                breadcrumbElement.querySelector('.breadcrumb-text').textContent =
                     `${activeIndex + 1} of ${totalImages} Images`;
             }
         }
@@ -964,8 +971,8 @@
             updateBreadcrumb(activeIndex);
         }
 
-        // --- Event Listeners ---
-        
+        // --- Event Listeners (Existing Logic) ---
+
         featureItems.forEach(item => {
             // Desktop hover (Primary interaction)
             item.addEventListener('mouseenter', function () {
@@ -986,23 +993,66 @@
             });
         });
 
-        // --- Initial State Setup ---
+        // --- Initial State Setup (Existing Logic) ---
 
-        // Find the index of the element that is initially marked 'active' in HTML
         const initialActiveItem = document.querySelector('.feature-item.active');
         if (window.innerWidth >= 992) {
             let initialActiveIndex = 0;
             if (initialActiveItem) {
-                // Find the index of the initially active item
                 featureItems.forEach((item, index) => {
                     if (item.classList.contains('active')) {
                         initialActiveIndex = index;
                     }
                 });
             }
-            // Update breadcrumb for the initial state (typically 1 of 5)
             updateBreadcrumb(initialActiveIndex);
         }
+
+        // --- NEW: Modal/Zoom Functionality ---
+
+        const zoomButtons = document.querySelectorAll('.zoom-button');
+        const modal = document.getElementById('image-zoom-modal');
+        const zoomedImage = document.getElementById('zoomed-image');
+        const closeButton = document.querySelector('.zoom-close-button');
+
+        // Function to close the modal
+        function closeModal() {
+            modal.style.display = "none";
+            document.body.style.overflow = ""; // Restore background scrolling
+            zoomedImage.src = ""; // Clear image source
+        }
+
+        // Open modal when zoom button is clicked
+        zoomButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent the parent 'feature-item' click logic
+
+                // Get the image source from the sibling image tag
+                const imgSrc = this.closest('.mobile-feature-image').querySelector('img').src;
+                
+                // Set the image source and display the modal
+                zoomedImage.src = imgSrc;
+                modal.style.display = "flex"; // Use flex to center the content
+                document.body.style.overflow = "hidden"; // Prevent background scrolling
+            });
+        });
+
+        // Close modal when the 'x' button is clicked
+        closeButton.addEventListener('click', closeModal);
+
+        // Close modal when clicking outside of the image content
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Close modal on 'Escape' key press
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && modal.style.display === "flex") {
+                closeModal();
+            }
+        });
     });
 </script>
 
