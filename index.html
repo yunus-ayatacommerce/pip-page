@@ -758,6 +758,7 @@
         </div>
 
         <div class="container my-1">
+            <div class="orange-wrapper">
             <div class="row">
                 <div class="col-12 col-lg-6 features-horizontal-scroll">
                     <div class="comparison-heading d-none d-lg-flex align-items-center">
@@ -894,6 +895,7 @@
 
                 </div>
 
+
                 <div class="col-lg-6 d-none d-lg-block">
                     <div id="image-showcase" class="image-container">
                         <img src="./assets/images/251/Marketplace-image.png" alt="Invoice Preview"
@@ -909,53 +911,100 @@
                     </div>
                 </div>
             </div>
+            </div>
         </div>
     </div>
 
     <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const featureItems = document.querySelectorAll('.feature-item');
+        const showcaseImages = document.querySelectorAll('.showcase-image');
+        // 1. Get the breadcrumb element (Desktop)
+        const breadcrumbElement = document.getElementById('image-breadcrumb-desktop');
 
-        document.addEventListener('DOMContentLoaded', function () {
-            const featureItems = document.querySelectorAll('.feature-item');
-            const showcaseImages = document.querySelectorAll('.showcase-image');
+        // Total number of images (should be 5 based on your HTML)
+        const totalImages = showcaseImages.length;
 
-            function setActiveState(activeItem) {
-                // This function is now ONLY for desktop/hover interaction
-                featureItems.forEach(i => i.classList.remove('active'));
-                activeItem.classList.add('active');
-
-                const targetImageId = activeItem.getAttribute('data-image-id');
-
-                // Handle Desktop Images
-                showcaseImages.forEach(img => {
-                    img.classList.remove('active');
-                    if (img.id === targetImageId) {
-                        img.classList.add('active');
-                    }
-                });
+        /**
+         * Updates the image count display on desktop.
+         * @param {number} activeIndex - The 0-based index of the currently active feature/image.
+         */
+        function updateBreadcrumb(activeIndex) {
+            if (breadcrumbElement) {
+                // Update the text: "Active Index + 1" (since indexes are 0-based) of "Total Images"
+                // Example: 0 index becomes "1 of 5 Images"
+                breadcrumbElement.querySelector('.breadcrumb-text').textContent = 
+                    `${activeIndex + 1} of ${totalImages} Images`;
             }
+        }
 
-            featureItems.forEach(item => {
-                // Desktop hover
-                item.addEventListener('mouseenter', function () {
-                    if (window.innerWidth >= 992) { // Only on desktop
-                        setActiveState(this);
-                    }
-                });
+        /**
+         * Sets the active state for the feature item and updates the showcase image/breadcrumb.
+         * @param {HTMLElement} activeItem - The currently hovered or active feature item.
+         */
+        function setActiveState(activeItem) {
+            // Remove 'active' class from all feature items
+            featureItems.forEach(i => i.classList.remove('active'));
+            // Set 'active' class on the current item
+            activeItem.classList.add('active');
 
-                // Mobile/Tablet click - MODIFIED
-                item.addEventListener('click', function (e) {
-                    if (window.innerWidth >= 992) {
-                        // Desktop: retains active state/updates image
-                        setActiveState(this);
-                    } else {
-                        // Mobile: prevents active class from sticking/doesn't do anything visual
-                        featureItems.forEach(i => i.classList.remove('active'));
-                    }
-                });
+            const targetImageId = activeItem.getAttribute('data-image-id');
+            let activeIndex = 0; // Initialize index tracker
+
+            // Handle Desktop Images: show the correct image based on data-image-id
+            showcaseImages.forEach((img, index) => {
+                img.classList.remove('active');
+                if (img.id === targetImageId) {
+                    img.classList.add('active');
+                    activeIndex = index; // Capture the 0-based index
+                }
+            });
+
+            // Update the breadcrumb
+            updateBreadcrumb(activeIndex);
+        }
+
+        // --- Event Listeners ---
+        
+        featureItems.forEach(item => {
+            // Desktop hover (Primary interaction)
+            item.addEventListener('mouseenter', function () {
+                if (window.innerWidth >= 992) { // Only on desktop
+                    setActiveState(this);
+                }
+            });
+
+            // Mobile/Tablet click (Prevents 'active' class from sticking on touch devices below 992px)
+            item.addEventListener('click', function (e) {
+                if (window.innerWidth >= 992) {
+                    // On desktop, click retains active state/updates image (just like hover)
+                    setActiveState(this);
+                } else {
+                    // On mobile, ensure active class is cleared as per your requirement
+                    featureItems.forEach(i => i.classList.remove('active'));
+                }
             });
         });
 
-    </script>
+        // --- Initial State Setup ---
+
+        // Find the index of the element that is initially marked 'active' in HTML
+        const initialActiveItem = document.querySelector('.feature-item.active');
+        if (window.innerWidth >= 992) {
+            let initialActiveIndex = 0;
+            if (initialActiveItem) {
+                // Find the index of the initially active item
+                featureItems.forEach((item, index) => {
+                    if (item.classList.contains('active')) {
+                        initialActiveIndex = index;
+                    }
+                });
+            }
+            // Update breadcrumb for the initial state (typically 1 of 5)
+            updateBreadcrumb(initialActiveIndex);
+        }
+    });
+</script>
 
     <!--Other section start here-->
 

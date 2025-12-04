@@ -993,6 +993,26 @@ hr {
     opacity: 1;
 }
 
+/* --- BREADCRUMB STYLES --- */
+
+/* Desktop Breadcrumb Container */
+#image-breadcrumb-desktop {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.breadcrumb-text {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #fcfcfc; /* Light background */
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+
+
 /* --- MOBILE ELEMENTS (Hidden by default) --- */
 /* These are permanently hidden on mobile to enforce horizontal scroll view */
 // .mobile-connector,
@@ -1048,17 +1068,22 @@ hr {
         border-bottom-right-radius: 0.8rem;
     }
     
+    
   
     .mobile-feature-image { display: none !important; }
 }
 
 /* --- Mobile/Tablet Horizontal Scroll Layout (Max-width 991.98px) --- */
 @media (max-width: 991.98px) {
-    .feature-item{
-        border: 15px solid #ff8a00!important;
-    } 
     
-    
+    .orange-wrapper{
+        background-color: orange;
+        padding:10px;
+       
+    }
+
+ 
+
     /* Make the parent container scroll horizontally */
     .features-horizontal-scroll {
         overflow-x: scroll;
@@ -1100,13 +1125,15 @@ hr {
         border-radius: 0.8rem 0.8rem 0 0; 
         padding: 20px;
         background-color: #fff5f5;
-        border-bottom: 1px dashed #eecaca;
+        border-bottom: 1px solid #FFB4B4;
+        min-height:100px;
     }
     .comparison-side-right {
         width: 100%;
         border-radius: 0 0 0.8rem 0.8rem;
         padding: 20px;
         background-color: #f2fff0;
+         min-height:100px;
     }
 
     /* Since we rely on JS to remove the 'active' class on click, 
@@ -1119,10 +1146,9 @@ hr {
     }
 
     /* Ensure the mobile connector icon and expandable image are disabled */
-    // .mobile-connector, 
-    // .mobile-feature-image {
-    //     display: none !important;
-    // }
+     .mobile-connector{
+       display: none !important;
+    }
 
 
 //task-253 css ends here
