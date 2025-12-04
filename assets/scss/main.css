@@ -600,9 +600,12 @@ h6 {
 @media (min-width: 768px) {
   .custom-image-style {
     /* This rule only applies on desktop/tablet */
-    max-width: 300px; /* Constrain the image size to 300px on desktop/tablet */
-    display: block; /* Required if setting max-width on an image */
-    margin: 0 auto; /* Center the constrained image */
+    max-width: 300px;
+    /* Constrain the image size to 300px on desktop/tablet */
+    display: block;
+    /* Required if setting max-width on an image */
+    margin: 0 auto;
+    /* Center the constrained image */
   }
 }
 .col.card-container {
@@ -858,7 +861,8 @@ hr {
 }
 
 /* Icons */
-.left-icon, .right-icon {
+.left-icon,
+.right-icon {
   margin-right: 15px;
   display: flex;
   align-items: center;
@@ -913,7 +917,8 @@ hr {
 .breadcrumb-text {
   display: inline-block;
   padding: 8px 15px;
-  background-color: #fcfcfc; /* Light background */
+  background-color: #fcfcfc;
+  /* Light background */
   border: 1px solid #e1e1e1;
   border-radius: 5px;
   font-size: 0.9rem;
@@ -983,19 +988,28 @@ hr {
   .features-horizontal-scroll {
     overflow-x: scroll;
     overflow-y: hidden;
-    white-space: nowrap; /* Forces children to stay on one line */
-    padding-bottom: 10px; /* Add some space for scrollbar */
-    -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
+    white-space: nowrap;
+    /* Forces children to stay on one line */
+    padding-bottom: 10px;
+    /* Add some space for scrollbar */
+    -webkit-overflow-scrolling: touch;
+    /* Smoother scrolling on iOS */
   }
   /* Adjust the feature-item to be an inline block and define its width */
   .feature-item {
-    flex-direction: column; /* Stacks left/right content vertically */
+    flex-direction: column;
+    /* Stacks left/right content vertically */
     display: inline-block;
-    width: 85vw; /* Make each card about 85% of the viewport width */
-    max-width: 400px; /* Cap the max width */
-    margin-right: 15px; /* Spacing between cards */
-    white-space: normal; /* Allow text wrapping inside the card */
-    vertical-align: top; /* Align inline-block elements */
+    width: 85vw;
+    /* Make each card about 85% of the viewport width */
+    max-width: 400px;
+    /* Cap the max width */
+    margin-right: 15px;
+    /* Spacing between cards */
+    white-space: normal;
+    /* Allow text wrapping inside the card */
+    vertical-align: top;
+    /* Align inline-block elements */
     /* Appearance adjustment for mobile card */
     border: 2px solid #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -1028,8 +1042,10 @@ hr {
   /* Since we rely on JS to remove the 'active' class on click, 
      we keep the inactive border style for 'active' */
   .feature-item.active {
-    border: 2px solid #fff; /* Revert to default inactive border */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Revert shadow */
+    border: 2px solid #fff;
+    /* Revert to default inactive border */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    /* Revert shadow */
   }
 }
 /* Ensure the mobile connector icon and expandable image are disabled */
@@ -1040,17 +1056,22 @@ hr {
 /* --- NEW: ZOOM MODAL STYLES --- */
 /* Modal Backdrop */
 .zoom-modal {
-  display: none; /* Hidden by default */
+  display: none;
+  /* Hidden by default */
   position: fixed;
-  z-index: 2000; /* Ensure it's above everything */
+  z-index: 2000;
+  /* Ensure it's above everything */
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Black w/ opacity */
+  justify-content: center;
+  /* Center content horizontally */
+  align-items: center;
+  /* Center content vertically */
 }
 
 /* Modal Content (Image Container) */
@@ -1068,7 +1089,8 @@ hr {
   width: 100%;
   height: auto;
   display: block;
-  background-color: #fff; /* White background for the image */
+  background-color: #fff;
+  /* White background for the image */
   padding: 10px;
   border-radius: 8px;
 }
@@ -1096,15 +1118,16 @@ hr {
 /* --- NEW: MOBILE ZOOM BUTTON STYLES --- */
 .mobile-feature-image {
   /* Keep existing styles */
-  position: relative; /* Essential for button positioning */
+  position: relative;
+  /* Essential for button positioning */
 }
 
 .zoom-button {
   position: absolute;
-  top: 340px; /* Adjust as needed */
-  right: 10px; /* Adjust as needed */
+  top: 340px;
+  right: 10px;
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.8); /* Orange with slight transparency */
+  background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   border: none;
   border-radius: 5%;
@@ -1129,7 +1152,15 @@ hr {
 @media (max-width: 991.98px) {
   /* Make the zoom button visible ONLY on mobile/tablet */
   .zoom-button {
-    display: flex; /* Override the default 'none' */
+    display: flex;
+    /* Override the default 'none' */
+  }
+}
+@media (max-width: 475.99px) {
+  /* Make the zoom button visible ONLY on mobile/tablet */
+  .zoom-button {
+    top: 255px !important;
+    /* Override the default 'none' */
   }
 }
 /* Ensures custom images fit properly */
@@ -1218,111 +1249,110 @@ hr {
     /* 3 columns for desktop */
   }
 }
-.bg-yellow {
-  background: #F6D54F;
+/* WRAPPER */
+.accordion-wrapper {
+  display: flex;
+  height: 400px;
+  overflow: visible;
 }
 
-.bg-orange {
-  background: #F7A928;
-}
-
-.text-orange {
-  color: #F7A928;
-}
-
+/* PANEL TABS */
 .accordion-tab {
-  border: 0;
-  border-radius: 12px;
-  padding: 20px 16px;
-  width: 55px;
-  height: 180px;
-  writing-mode: vertical-rl;
+  width: 60px;
+  writing-mode: sideways-lr;
   text-orientation: mixed;
+  background: #FFD95C;
   color: #000;
-  display: inline-flex;
-  justify-content: space-between;
+  padding: 20px 10px;
+  display: flex;
   align-items: center;
-  font-weight: 600;
+  justify-content: center;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.4s ease;
+  border-right: 2px solid #fff;
+  position: relative;
+  font-weight: 600;
 }
 
-.right-tab {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  height: 220px;
+.accordion-tab.active {
+  background: #FFA100;
+  color: #000;
 }
 
-.accordion-tab span {
-  font-size: 14px;
-  line-height: 1.2;
-  text-align: center;
+.accordion-tab .arrow {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+  font-size: 20px;
+  transition: transform 0.4s ease;
 }
 
-.image-card {
-  width: 300px;
-  height: 300px;
-  transition: opacity 0.3s ease;
+.accordion-tab.active .arrow {
+  transform: translateX(-50%) rotate(-90deg);
 }
 
-.fade-area {
-  opacity: 1;
-  transition: opacity 0.4s ease;
+/* CONTENT PANEL */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.accordion-content {
+  flex: 1;
+  background: #FFF8DF;
+  padding: 40px;
+  display: none;
+  animation: fadeIn 0.8s ease-in-out forwards;
 }
 
-.fade-hide {
-  opacity: 0;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.accordion-content img {
+  max-width: 100%;
+  border-radius: 10px;
 }
 
-/* MOBILE OVERRIDE */
+/* MOBILE VIEW: VERTICAL ACCORDION */
 @media (max-width: 768px) {
-  .image-card {
-    width: 100%;
+  .accordion-wrapper {
+    flex-direction: column;
     height: auto;
   }
-}
-@media (min-width: 768px) {
-  .fixed-height-row {
-    height: 350px !important;
-    overflow: hidden;
+  .accordion-tab {
+    writing-mode: horizontal-tb;
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid #fff;
+  }
+  .accordion-tab .arrow {
+    right: 15px;
+    left: auto;
+    transform: rotate(0deg);
+  }
+  .accordion-tab.active .arrow {
+    transform: rotate(180deg);
   }
 }
-@media (max-width: 767.99px) {
-  .carousel-inner .carousel-item img {
-    max-height: 80vh !important;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .hero-content {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-}
-@media (max-width: 575.99px) {
-  .slider-data {
-    width: 80%;
-    max-width: 80%;
-    left: 10%;
-    padding-right: 15px;
-    top: 25%;
-    transform: none;
-    margin-left: auto;
-    margin-right: auto;
-    min-height: 50vh;
-  }
-  .wrapper-mobile-bg {
-    background-color: #ff8a00;
-  }
-}
-#transactionCarousel .carousel-control-prev,
-#transactionCarousel .carousel-control-next {
-  width: 40px;
-  height: 60px;
-  top: 50%;
-  transform: translateY(-50%);
+.accordion-wrapper.reorder-tab-1 .accordion-tab[data-target=panel1] {
+  order: 4;
 }
 
-#transactionCarousel .carousel-control-prev-icon,
-#transactionCarousel .carousel-control-next-icon {
-  filter: invert(100%) grayscale(100%) brightness(0) !important;
+.accordion-wrapper.reorder-tab-2 .accordion-tab[data-target=panel2] {
+  order: 4;
+}
+
+.accordion-wrapper.reorder-tab-3 .accordion-tab[data-target=panel3] {
+  order: 4;
 }/*# sourceMappingURL=main.css.map */

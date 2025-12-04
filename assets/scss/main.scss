@@ -491,7 +491,9 @@ h6 {
         margin: 0 auto;
     }
 
-    .wrapper-mobile-bg{background-color: #ff8a00!important;}
+    .wrapper-mobile-bg {
+        background-color: #ff8a00 !important;
+    }
 
     .carousel-inner-hf {
         height: 600px !important;
@@ -550,7 +552,8 @@ h6 {
 
 
 
-.nav{
+.nav {
+
     /* Hide scrollbar for Webkit browsers (Chrome, Safari, Opera) */
     &::-webkit-scrollbar {
         display: none;
@@ -574,7 +577,8 @@ h6 {
 }
 
 .col-4-ded {
-    width: 30.00% !important; }
+    width: 30.00% !important;
+}
 
 
 .nav-pills .custom-nav-link {
@@ -616,7 +620,7 @@ h6 {
 .card-right img {
     width: 100% !important;
     max-width: 100% !important;
-    height: auto; 
+    height: auto;
 }
 
 
@@ -628,8 +632,8 @@ h6 {
     text-align: center;
     line-height: 1.2;
     min-height: 100px !important;
-    padding-top:10px!important;
-    padding-bottom:10px!important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
 
 }
 
@@ -661,12 +665,15 @@ h6 {
 @media (min-width: 768px) {
     .custom-image-style {
         /* This rule only applies on desktop/tablet */
-        max-width: 300px; /* Constrain the image size to 300px on desktop/tablet */
-        display: block; /* Required if setting max-width on an image */
-        margin: 0 auto; /* Center the constrained image */
+        max-width: 300px;
+        /* Constrain the image size to 300px on desktop/tablet */
+        display: block;
+        /* Required if setting max-width on an image */
+        margin: 0 auto;
+        /* Center the constrained image */
     }
 
-    
+
 
 
 }
@@ -796,28 +803,28 @@ h6 {
 
 
 .commerce-nav-pane .custom-nav-link {
-    color: #333; 
-    background-color: transparent;   
-    border-bottom: 1px solid #ffe8cc;   
-    transition: background-color 0.2s ease-in-out; 
-    display: flex;   
-    align-items: center;  
+    color: #333;
+    background-color: transparent;
+    border-bottom: 1px solid #ffe8cc;
+    transition: background-color 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
     padding-right: 1.5rem;
-    
+
 }
 
 .commerce-nav-pane .custom-nav-link:last-of-type {
     border-bottom: none;
-  
+
 }
 
 
 .commerce-nav-pane .custom-nav-link.active {
-    background-color: #FFD95C !important; 
+    background-color: #FFD95C !important;
     font-weight: 600;
     color: #212529;
-    
+
 
 
 }
@@ -826,7 +833,7 @@ h6 {
 .commerce-nav-pane .custom-nav-link:not(.active):hover {
     background-color: #000;
     color: #FFD95C;
-   
+
 }
 
 
@@ -834,7 +841,7 @@ h6 {
     border: 5px solid #FFD95C;
     background-color: #ffffff;
     padding: 1rem;
-    
+
 }
 
 /* Specific styling for the image placeholder if Bootstrap's img-fluid isn't enough */
@@ -842,7 +849,7 @@ h6 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f8f9fa; 
+    background-color: #f8f9fa;
     border: 1px dashed #ced4da;
     color: #6c757d;
     height: 100%;
@@ -862,7 +869,7 @@ h6 {
     min-height: 350px;
     background-color: transparent;
     border: none;
-    
+
 }
 
 
@@ -886,11 +893,11 @@ hr {
     color: #cc7a00;
 }
 
-.card-mobile-bg{
-    width:100vw!important;
+.card-mobile-bg {
+    width: 100vw !important;
     background-color: #cc7a00;
     border-radius: 15px;
-    height:auto;
+    height: auto;
 }
 
 /* --- COMPARISON HEADING (Desktop Header) --- */
@@ -927,20 +934,20 @@ hr {
 .feature-item {
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-bottom: 0.8rem; 
+    margin-bottom: 0.8rem;
     position: relative;
     padding: 0;
     border: 1px solid #e1e1e1;
-    border-radius: 0.8rem; 
+    border-radius: 0.8rem;
     background-color: #fff;
     display: flex;
-    overflow: visible; 
+    overflow: visible;
 }
 
 
 .feature-item:hover,
 .feature-item.active {
-    border: 4px solid #ff8a00; 
+    border: 4px solid #ff8a00;
     box-shadow: 0 4px 15px rgba(255, 138, 0, 0.15);
 }
 
@@ -949,20 +956,21 @@ hr {
 .comparison-side-right {
     padding: 1.5rem 1rem;
     position: relative;
-    display: flex; 
+    display: flex;
     align-items: center;
 }
 
 .comparison-side-left {
-    background-color: #fff5f5; 
+    background-color: #fff5f5;
 }
 
 .comparison-side-right {
-    background-color: #f2fff0; 
+    background-color: #f2fff0;
 }
 
 /* Icons */
-.left-icon, .right-icon {
+.left-icon,
+.right-icon {
     margin-right: 15px;
     display: flex;
     align-items: center;
@@ -971,8 +979,13 @@ hr {
     height: 32px;
 }
 
-.left-icon { color: #dc3545; }
-.right-icon { color: #198754; }
+.left-icon {
+    color: #dc3545;
+}
+
+.right-icon {
+    color: #198754;
+}
 
 /* Text Area */
 .content-text {
@@ -1013,7 +1026,8 @@ hr {
 .breadcrumb-text {
     display: inline-block;
     padding: 8px 15px;
-    background-color: #fcfcfc; /* Light background */
+    background-color: #fcfcfc;
+    /* Light background */
     border: 1px solid #e1e1e1;
     border-radius: 5px;
     font-size: 0.9rem;
@@ -1047,7 +1061,7 @@ hr {
 .showcase-image {
     width: 100%;
     height: 100%;
-    object-fit: contain; 
+    object-fit: contain;
     position: absolute;
     top: 0;
     left: 0;
@@ -1064,115 +1078,136 @@ hr {
 
 /* --- Desktop Layout (Min-width 992px) --- */
 @media (min-width: 992px) {
-    
+
     .comparison-side-left {
         width: 50%;
         border-right: 1px solid #eee;
         border-top-left-radius: 0.8rem;
         border-bottom-left-radius: 0.8rem;
     }
+
     .comparison-side-right {
         width: 50%;
         border-top-right-radius: 0.8rem;
         border-bottom-right-radius: 0.8rem;
     }
-    
-    
-  
-    .mobile-feature-image { display: none !important; }
+
+
+
+    .mobile-feature-image {
+        display: none !important;
+    }
 }
 
 /* --- Mobile/Tablet Horizontal Scroll Layout (Max-width 991.98px) --- */
 @media (max-width: 991.98px) {
-    
-    .orange-wrapper{
+
+    .orange-wrapper {
         background-color: orange;
-        padding:10px;
-       
+        padding: 10px;
+
     }
 
- 
+
 
     /* Make the parent container scroll horizontally */
     .features-horizontal-scroll {
         overflow-x: scroll;
         overflow-y: hidden;
-        white-space: nowrap; /* Forces children to stay on one line */
-        padding-bottom: 10px; /* Add some space for scrollbar */
-        -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
+        white-space: nowrap;
+        /* Forces children to stay on one line */
+        padding-bottom: 10px;
+        /* Add some space for scrollbar */
+        -webkit-overflow-scrolling: touch;
+        /* Smoother scrolling on iOS */
     }
 
     /* Adjust the feature-item to be an inline block and define its width */
     .feature-item {
-        flex-direction: column; /* Stacks left/right content vertically */
+        flex-direction: column;
+        /* Stacks left/right content vertically */
         display: inline-block;
-        width: 85vw; /* Make each card about 85% of the viewport width */
-        max-width: 400px; /* Cap the max width */
-        margin-right: 15px; /* Spacing between cards */
-        white-space: normal; /* Allow text wrapping inside the card */
-        vertical-align: top; /* Align inline-block elements */
-        
+        width: 85vw;
+        /* Make each card about 85% of the viewport width */
+        max-width: 400px;
+        /* Cap the max width */
+        margin-right: 15px;
+        /* Spacing between cards */
+        white-space: normal;
+        /* Allow text wrapping inside the card */
+        vertical-align: top;
+        /* Align inline-block elements */
+
         /* Appearance adjustment for mobile card */
-        border: 2px solid #fff; 
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        border: 2px solid #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         margin-bottom: 20px;
     }
 
     .showcase-image {
-        opacity: 1!important;
+        opacity: 1 !important;
     }
-    
+
     /* Ensure desktop-only elements are hidden */
-    .arrow-icon, 
-    .image-container { 
-        display: none !important; 
+    .arrow-icon,
+    .image-container {
+        display: none !important;
     }
 
     /* Set mobile side layouts to 100% width and set radius/padding */
     .comparison-side-left {
         width: 100%;
-        border-radius: 0.8rem 0.8rem 0 0; 
+        border-radius: 0.8rem 0.8rem 0 0;
         padding: 20px;
         background-color: #fff5f5;
         border-bottom: 1px solid #FFB4B4;
-        min-height:100px;
+        min-height: 100px;
     }
+
     .comparison-side-right {
         width: 100%;
         border-radius: 0 0 0.8rem 0.8rem;
         padding: 20px;
         background-color: #f2fff0;
-         min-height:100px;
+        min-height: 100px;
     }
 
     /* Since we rely on JS to remove the 'active' class on click, 
        we keep the inactive border style for 'active' */
     .feature-item.active {
-        border: 2px solid #fff; /* Revert to default inactive border */
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Revert shadow */
+        border: 2px solid #fff;
+        /* Revert to default inactive border */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        /* Revert shadow */
     }
 
-    }
+}
 
-    /* Ensure the mobile connector icon and expandable image are disabled */
-     .mobile-connector{
-       display: none !important;
-    }
+/* Ensure the mobile connector icon and expandable image are disabled */
+.mobile-connector {
+    display: none !important;
+}
+
 /* --- NEW: ZOOM MODAL STYLES --- */
 
 /* Modal Backdrop */
 .zoom-modal {
-    display: none; /* Hidden by default */
-    position: fixed; 
-    z-index: 2000; /* Ensure it's above everything */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 2000;
+    /* Ensure it's above everything */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Black w/ opacity */
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: center;
+    /* Center content vertically */
 }
 
 /* Modal Content (Image Container) */
@@ -1190,7 +1225,8 @@ hr {
     width: 100%;
     height: auto;
     display: block;
-    background-color: #fff; /* White background for the image */
+    background-color: #fff;
+    /* White background for the image */
     padding: 10px;
     border-radius: 8px;
 }
@@ -1199,7 +1235,7 @@ hr {
 .zoom-close-button {
     position: absolute;
     top: -20px;
-    right: 0px; 
+    right: 0px;
     color: #fff;
     font-size: 40px;
     font-weight: bold;
@@ -1219,15 +1255,16 @@ hr {
 
 .mobile-feature-image {
     /* Keep existing styles */
-    position: relative; /* Essential for button positioning */
+    position: relative;
+    /* Essential for button positioning */
 }
 
 .zoom-button {
     position: absolute;
-    top: 340px; /* Adjust as needed */
-    right: 10px; /* Adjust as needed */
+    top: 340px;
+    right: 10px;
     z-index: 100;
-    background-color: rgba(0, 0, 0, 0.8); /* Orange with slight transparency */
+    background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
     border: none;
     border-radius: 5%;
@@ -1252,9 +1289,20 @@ hr {
 /* RESPONSIVE STYLES */
 
 @media (max-width: 991.98px) {
+
     /* Make the zoom button visible ONLY on mobile/tablet */
     .zoom-button {
-        display: flex; /* Override the default 'none' */
+        display: flex;
+        /* Override the default 'none' */
+    }
+}
+
+@media (max-width: 475.99px) {
+
+    /* Make the zoom button visible ONLY on mobile/tablet */
+    .zoom-button {
+        top: 255px !important;
+        /* Override the default 'none' */
     }
 }
 
@@ -1375,130 +1423,120 @@ hr {
 //----------------------------------------------------------------------------------------------------------------------
 //task-254-B-css start here
 
-
-.bg-yellow {
-    background: #F6D54F;
+/* WRAPPER */
+.accordion-wrapper {
+    display: flex;
+    height: 400px;
+    overflow: visible;
 }
 
-.bg-orange {
-    background: #F7A928;
-}
-
-.text-orange {
-    color: #F7A928;
-}
-
+/* PANEL TABS */
 .accordion-tab {
-    border: 0;
-    border-radius: 12px;
-    padding: 20px 16px;
-    width: 55px;
-    height: 180px;
-    writing-mode: vertical-rl;
+    width: 60px;
+    writing-mode: sideways-lr;
     text-orientation: mixed;
+    background: #FFD95C;
     color: #000;
-    display: inline-flex;
-    justify-content: space-between;
+    padding: 20px 10px;
+    display: flex;
     align-items: center;
-    font-weight: 600;
+    justify-content: center;
     cursor: pointer;
-    transition: .3s ease;
+    transition: all 0.4s ease;
+    border-right: 2px solid #fff;
+    position: relative;
+    font-weight: 600;
 }
 
-.right-tab {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    height: 220px;
+.accordion-tab.active {
+    background: #FFA100;
+    color: #000;
 }
 
-.accordion-tab span {
-    font-size: 14px;
-    line-height: 1.2;
-    text-align: center;
+.accordion-tab .arrow {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+    font-size: 20px;
+    transition: transform 0.4s ease;
 }
 
-.image-card {
-    width: 300px;
-    height: 300px;
-    transition: opacity .3s ease;
+.accordion-tab.active .arrow {
+    transform: translateX(-50%) rotate(-90deg);
 }
 
-.fade-area {
-    opacity: 1;
-    transition: opacity .4s ease;
+/* CONTENT PANEL */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.fade-hide {
-    opacity: 0;
+
+.accordion-content {
+    flex: 1;
+    background: #FFF8DF;
+    padding: 40px;
+    display: none;
+    animation: fadeIn 0.8s ease-in-out forwards;
+    
 }
 
-/* MOBILE OVERRIDE */
-@media (max-width:768px) {
-    .image-card {
-        width: 100%;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.accordion-content img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* MOBILE VIEW: VERTICAL ACCORDION */
+@media(max-width: 768px) {
+    .accordion-wrapper {
+        flex-direction: column;
         height: auto;
     }
-}
 
+    .accordion-tab {
+        writing-mode: horizontal-tb;
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #fff;
+    }
 
+    .accordion-tab .arrow {
+        right: 15px;
+        left: auto;
+        transform: rotate(0deg);
+    }
 
-//task-254-B-css ends here
-@media (min-width: 768px) {
-    .fixed-height-row {
-        height: 350px !important;
-        overflow: hidden;
-
+    .accordion-tab.active .arrow {
+        transform: rotate(180deg);
     }
 }
 
-
-@media (max-width: 767.99px) {
-    .carousel-inner .carousel-item img {
-
-        max-height: 80vh !important;
-        object-fit: cover;
-    }
-
-    .hero-content {
-        top: 50%;
-        transform: translateY(-50%);
-    }
+.accordion-wrapper.reorder-tab-1 .accordion-tab[data-target="panel1"] {
+    order: 4;
 }
 
-@media (max-width: 575.99px) {
-    .slider-data {
-        width: 80%;
-        max-width: 80%;
-        left: 10%;
-        padding-right: 15px;
-        top: 25%;
-        transform: none;
-        margin-left: auto;
-        margin-right: auto;
-        min-height: 50vh;
-    }
-
-    .wrapper-mobile-bg{background-color: #ff8a00;}
-
-
+.accordion-wrapper.reorder-tab-2 .accordion-tab[data-target="panel2"] {
+    order: 4;
 }
 
-
-
-#transactionCarousel .carousel-control-prev,
-#transactionCarousel .carousel-control-next {
-
-
-
-    width: 40px;
-    height: 60px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-#transactionCarousel .carousel-control-prev-icon,
-#transactionCarousel .carousel-control-next-icon {
-
-    filter: invert(100%) grayscale(100%) brightness(0) !important;
-
+.accordion-wrapper.reorder-tab-3 .accordion-tab[data-target="panel3"] {
+    order: 4;
 }

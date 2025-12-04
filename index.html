@@ -1546,6 +1546,130 @@ The post-purchase moment is a universal opportunity. Explore how
     </div>
 
 
+
+    <!--AC-254-B starts here-->
+
+
+
+    <div class="container py-5">
+
+         <div class="text-center mb-5 rounded-2">
+            <span class="custom-badge-top p-2 rounded-1 d-inline-block mb-3 fst-italic">The future of Commerce
+                demand a smart
+                transaction</span>
+            <h2 class="display-6 fw-bold">Addressing the Gaps in Modern Commerce</h2>
+            <p class="col-lg-8 mx-auto">Customer expectations have evolved, but transactional communications have not.
+                See the market data and case studies that highlight the urgent need for intelligent smart receipts and
+                invoices.</p>
+        </div>
+  <div class="accordion-wrapper" id="customAccordion">
+
+    <!-- TAB 1 -->
+    <div class="accordion-tab active" data-target="panel1">
+      Marketplaces & Unified Commerce
+      <span class="arrow">➤</span>
+    </div>
+
+    <!-- TAB 2 -->
+    <div class="accordion-tab" data-target="panel2">
+      The Rise of Agentic Commerce
+      <span class="arrow">➤</span>
+    </div>
+
+    <!-- TAB 3 -->
+    <div class="accordion-tab" data-target="panel3">
+      The Omnichannel Disconnect
+      <span class="arrow">➤</span>
+    </div>
+
+    <!-- CONTENT PANEL 1 -->
+    <div class="accordion-content d-block" id="panel1">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <h3>The Omnichannel Disconnect</h3>
+          <p>Customers expect a seamless experience, but the journey often breaks  down post-purchase. In-store purchases are disconnected from digital  profiles, creating data silos and missed opportunities.</p>
+
+           <h3>Case Study: Fashion Retailer</h3>
+          <p>A leading  fashion brand unified their online and offline sales data using our  smart receipts, leading to a 15% increase in repeat purchases from  in-store shoppers.</p>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENT PANEL 2 -->
+    <div class="accordion-content" id="panel2">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <h3>The Rise of Agentic Commerce</h3>
+          <p>AI-driven commerce enables personalized shopping journeys.</p>
+          <p>Agentic systems help automate complex decision-making for smoother buying.</p>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="https://images.unsplash.com/photo-1555529771-35a38ca604f0?auto=format&fit=crop&w=800&q=80" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENT PANEL 3 -->
+    <div class="accordion-content" id="panel3">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <h3>The Omnichannel Disconnect</h3>
+          <p>Customers expect a seamless experience, but the journey often breaks down post‑purchase due to disconnected digital and in‑store systems.</p>
+
+          <h5 class="mt-4 fw-bold">Case Study: Fashion Retailer</h5>
+          <p>A leading fashion brand unified their online and offline sales data, resulting in a 15% increase in repeat purchases from in‑store shoppers.</p>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="https://images.unsplash.com/photo-1515165562835-c3b8b0fb0a88?auto=format&fit=crop&w=800&q=80" alt="" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const wrapper = document.getElementById('customAccordion');
+  const tabs = document.querySelectorAll('.accordion-tab');
+  const panels = document.querySelectorAll('.accordion-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.getAttribute('data-target');
+
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // Reset order classes
+      wrapper.classList.remove('reorder-tab-1','reorder-tab-2','reorder-tab-3');
+
+      // Apply reorder class so clicked tab moves to right end
+      if(target === 'panel1') wrapper.classList.add('reorder-tab-1');
+      if(target === 'panel2') wrapper.classList.add('reorder-tab-2');
+      if(target === 'panel3') wrapper.classList.add('reorder-tab-3');
+
+      panels.forEach(p => {
+        p.classList.remove('d-block');
+        p.style.display = 'none';
+      });
+
+      const activePanel = document.getElementById(target);
+      activePanel.style.display = 'block';
+    });
+  });
+</script>
+
+
+
+    <!--AC-254-B ends here-->
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
