@@ -491,6 +491,8 @@ h6 {
         margin: 0 auto;
     }
 
+    .wrapper-mobile-bg{background-color: #ff8a00!important;}
+
     .carousel-inner-hf {
         height: 600px !important;
     }
@@ -864,7 +866,7 @@ hr {
 //Task-251- Module 2 CSS ends here
 
 //task-253 css starts here
- /* --- BASE STYLES --- */
+/* --- BASE STYLES --- */
 .wrapper-bg {
     background-color: #fff0d6;
     padding: 50px 0px;
@@ -992,15 +994,11 @@ hr {
 }
 
 /* --- MOBILE ELEMENTS (Hidden by default) --- */
-.mobile-connector {
-    display: none;
-}
-.mobile-feature-image {
-    display: none;
-    width: 100%;
-    padding: 0;
-    overflow: hidden;
-}
+/* These are permanently hidden on mobile to enforce horizontal scroll view */
+// .mobile-connector,
+// .mobile-feature-image {
+//     display: none !important;
+// }
 .mobile-feature-image img {
     width: 100%;
     height: auto;
@@ -1033,8 +1031,9 @@ hr {
     opacity: 1;
 }
 
-/* RESPONSIVE STYLES (Mobile & Tablet) */
+/* RESPONSIVE STYLES */
 
+/* --- Desktop Layout (Min-width 992px) --- */
 @media (min-width: 992px) {
     
     .comparison-side-left {
@@ -1048,28 +1047,54 @@ hr {
         border-top-right-radius: 0.8rem;
         border-bottom-right-radius: 0.8rem;
     }
-   
+    
+  
     .mobile-feature-image { display: none !important; }
 }
 
+/* --- Mobile/Tablet Horizontal Scroll Layout (Max-width 991.98px) --- */
 @media (max-width: 991.98px) {
-   
+    .feature-item{
+        border: 15px solid #ff8a00!important;
+    } 
+    
+    
+    /* Make the parent container scroll horizontally */
+    .features-horizontal-scroll {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap; /* Forces children to stay on one line */
+        padding-bottom: 10px; /* Add some space for scrollbar */
+        -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
+    }
+
+    /* Adjust the feature-item to be an inline block and define its width */
     .feature-item {
-        flex-direction: column;
+        flex-direction: column; /* Stacks left/right content vertically */
+        display: inline-block;
+        width: 85vw; /* Make each card about 85% of the viewport width */
+        max-width: 400px; /* Cap the max width */
+        margin-right: 15px; /* Spacing between cards */
+        white-space: normal; /* Allow text wrapping inside the card */
+        vertical-align: top; /* Align inline-block elements */
+        
+        /* Appearance adjustment for mobile card */
         border: 2px solid #fff; 
         box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         margin-bottom: 20px;
     }
+
+    .showcase-image {
+        opacity: 1!important;
+    }
     
-    .feature-item.active {
-        border: 2px solid #ff8a00;
+    /* Ensure desktop-only elements are hidden */
+    .arrow-icon, 
+    .image-container { 
+        display: none !important; 
     }
 
-    
-    .arrow-icon { display: none !important; }
-    .image-container { display: none !important; }
-
-   
+    /* Set mobile side layouts to 100% width and set radius/padding */
     .comparison-side-left {
         width: 100%;
         border-radius: 0.8rem 0.8rem 0 0; 
@@ -1077,8 +1102,6 @@ hr {
         background-color: #fff5f5;
         border-bottom: 1px dashed #eecaca;
     }
-
-   
     .comparison-side-right {
         width: 100%;
         border-radius: 0 0 0.8rem 0.8rem;
@@ -1086,47 +1109,21 @@ hr {
         background-color: #f2fff0;
     }
 
-   
-    .mobile-connector {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 0;
-        position: relative;
-        z-index: 10;
+    /* Since we rely on JS to remove the 'active' class on click, 
+       we keep the inactive border style for 'active' */
+    .feature-item.active {
+        border: 2px solid #fff; /* Revert to default inactive border */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Revert shadow */
     }
 
-    .mobile-connector i {
-        background-color: #92c388; 
-        color: #fff;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 12px;
-        border: 2px solid #fff;
-        margin-top: -12px; 
     }
 
-    
-    .feature-item.active .comparison-side-right {
-        border-radius: 0; 
-    }
+    /* Ensure the mobile connector icon and expandable image are disabled */
+    // .mobile-connector, 
+    // .mobile-feature-image {
+    //     display: none !important;
+    // }
 
-    .feature-item.active .mobile-feature-image {
-        display: block;
-        border-radius: 0 0 0.8rem 0.8rem;
-        border-top: 1px solid #e1e1e1;
-        animation: slideDown 0.3s ease-out;
-    }
-
-    @keyframes slideDown {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-}   
 
 //task-253 css ends here
 //........................................................................................................................................
@@ -1347,6 +1344,8 @@ hr {
         margin-right: auto;
         min-height: 50vh;
     }
+
+    .wrapper-mobile-bg{background-color: #ff8a00;}
 
 
 }
