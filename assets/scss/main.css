@@ -553,6 +553,13 @@ h6 {
   border-radius: 10px 0px 0px 10px;
 }
 
+/* FIX: Ensures icon images inside the right card are 100% width on all views, especially mobile */
+.card-right img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto;
+}
+
 .stat-box {
   background-color: #FFD95C;
   color: #000;

@@ -566,7 +566,7 @@ h6 {
 }
 
 //.increased-height {
-//  min-height: calc(100% + 10px); 
+//  min-height: calc(100% + 10px); 
 //}
 
 .bg-light-yellow {
@@ -610,6 +610,13 @@ h6 {
     border: 3px solid solid;
     border-radius: 10px 0px 0px 10px;
 
+}
+
+/* FIX: Ensures icon images inside the right card are 100% width on all views, especially mobile */
+.card-right img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto; 
 }
 
 
@@ -658,9 +665,11 @@ h6 {
         display: block; /* Required if setting max-width on an image */
         margin: 0 auto; /* Center the constrained image */
     }
+
+    
+
+
 }
-
-
 
 
 
