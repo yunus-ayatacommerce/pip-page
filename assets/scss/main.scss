@@ -1425,125 +1425,7 @@ hr {
 //task-254-A css ends here
 
 //----------------------------------------------------------------------------------------------------------------------
-//task-254-B-css start here
 
-/* WRAPPER */
-.accordion-wrapper {
-    display: flex;
-    height: 400px;
-    overflow: visible;
-}
-
-/* PANEL TABS */
-.accordion-tab {
-    width: 60px;
-    writing-mode: sideways-lr;
-    text-orientation: mixed;
-    background: #FFD95C;
-    color: #000;
-    padding: 20px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    border-right: 2px solid #fff;
-    position: relative;
-    font-weight: 600;
-}
-
-.accordion-tab.active {
-    background: #FFA100;
-    color: #000;
-}
-
-.accordion-tab .arrow {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%) rotate(90deg);
-    font-size: 20px;
-    transition: transform 0.4s ease;
-}
-
-.accordion-tab.active .arrow {
-    transform: translateX(-50%) rotate(-90deg);
-}
-
-/* CONTENT PANEL */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-.accordion-content {
-    flex: 1;
-    background: #FFF8DF;
-    padding: 40px;
-    display: none;
-    animation: fadeIn 0.8s ease-in-out forwards;
-    
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.accordion-content img {
-    max-width: 100%;
-    border-radius: 10px;
-}
-
-/* MOBILE VIEW: VERTICAL ACCORDION */
-@media(max-width: 768px) {
-    .accordion-wrapper {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .accordion-tab {
-        writing-mode: horizontal-tb;
-        width: 100%;
-        border-right: none;
-        border-bottom: 2px solid #fff;
-    }
-
-    .accordion-tab .arrow {
-        right: 15px;
-        left: auto;
-        transform: rotate(0deg);
-    }
-
-    .accordion-tab.active .arrow {
-        transform: rotate(180deg);
-    }
-}
-
-.accordion-wrapper.reorder-tab-1 .accordion-tab[data-target="panel1"] {
-    order: 4;
-}
-
-.accordion-wrapper.reorder-tab-2 .accordion-tab[data-target="panel2"] {
-    order: 4;
-}
-
-.accordion-wrapper.reorder-tab-3 .accordion-tab[data-target="panel3"] {
-    order: 4;
-}
 
 //AC-255 CSS starts here
 
@@ -1610,7 +1492,7 @@ hr {
 
 //AC-255 CSS ends here
 
-//AC-259 CSS Starts here
+//AC-254-B CSS Starts here
   :root{
         --bg: #fff7ef;
         --btn-collapsed: #ffd95c; /* pale yellow */
@@ -1674,6 +1556,7 @@ hr {
         transform: translateX(-12px);
         opacity: 0; 
         pointer-events: none;
+        cursor:default;
         transition: max-width 0.6s cubic-bezier(.2,.9,.2,1), transform 0.6s cubic-bezier(.2,.9,.2,1);
     }
 
