@@ -1249,67 +1249,6 @@ hr {
     /* 3 columns for desktop */
   }
 }
-/* Approximate background color from the image */
-.ereceipt-bg {
-  background-color: #FFEEB5;
-}
-
-/* Adds padding around the content */
-.ereceipt-main-container {
-  padding: 50px 20px;
-}
-
-/* List Styling */
-.ereceipt-content-list {
-  list-style: none; /* Removes default bullet points */
-  padding-left: 0;
-}
-
-.ereceipt-content-list li {
-  margin-bottom: 25px;
-  cursor: pointer; /* Indicates clickable elements */
-  transition: color 0.2s;
-  line-height: 1.2;
-}
-
-/* Highlight color for active/hover */
-.ereceipt-content-list li:hover, .ereceipt-content-list li.active {
-  color: #FF8800;
-}
-
-/* Style for the colored dot icon */
-.ereceipt-icon-dot {
-  height: 12px;
-  width: 12px;
-  background-color: #FF8800; /* Dot color */
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 15px;
-  flex-shrink: 0; /* Prevents dot from shrinking */
-}
-
-/* Styling for Headings */
-.ereceipt-section-title {
-  font-size: 1.75rem;
-  font-weight: 600;
-  margin-bottom: 25px;
-}
-
-/* Image container styling to fit the phone image */
-.ereceipt-phone-display {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.ereceipt-phone-image {
-  max-width: 100%;
-  height: auto;
-  max-height: 70vh; /* Ensures image fits well on the screen */
-  transition: opacity 0.2s ease-in-out; /* Smooth fade effect */
-}
-
 :root {
   --bg: #fff7ef;
   --btn-collapsed: #ffd95c; /* pale yellow */
@@ -1413,7 +1352,8 @@ hr {
 .acc-text p {
   margin: 0;
   color: #333;
-  width: 500px;
+  width: 450px;
+  font-size: 0.85rem;
 }
 
 /* split the left text into two blocks (heading+desc and case study) */
@@ -1427,7 +1367,7 @@ hr {
 
 /* right image placeholder */
 .acc-img {
-  width: 40%;
+  width: 31%;
   min-width: 220px;
   height: 320px;
   background: #e6e6e6;
