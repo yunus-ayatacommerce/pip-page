@@ -1249,6 +1249,80 @@ hr {
     /* 3 columns for desktop */
   }
 }
+/* Approximate background color from the image */
+.ereceipt-bg {
+  background-color: #FFEEB5;
+}
+
+/* Adds padding around the content */
+.ereceipt-main-container {
+  padding: 50px 20px;
+}
+
+/* List Styling */
+.ereceipt-content-list {
+  list-style: none; /* Removes default bullet points */
+  padding-left: 0;
+}
+
+.ereceipt-content-list li {
+  margin-bottom: 25px;
+  cursor: pointer; /* Indicates clickable elements */
+  /* Keeping hover for visual feedback on the list items */
+  transition: color 0.2s;
+  line-height: 1.2;
+}
+
+/* Highlight color for active/hover */
+/* List items will still highlight on hover/active, but won't trigger image change */
+.ereceipt-content-list li:hover, .ereceipt-content-list li.active {
+  color: #FF8800;
+}
+
+/* Style for the colored dot icon */
+.ereceipt-icon-dot {
+  height: 12px;
+  width: 12px;
+  background-color: #FF8800; /* Dot color */
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 15px;
+  flex-shrink: 0; /* Prevents dot from shrinking */
+}
+
+.ereceipt-icon-ring {
+  height: 12px;
+  width: 12px;
+  background-color: transparent;
+  border: 1px solid #ff8800;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 15px;
+  flex-shrink: 0; /* Prevents dot from shrinking */
+}
+
+/* Styling for Headings */
+.ereceipt-section-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* Image container styling to fit the phone image */
+.ereceipt-phone-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.ereceipt-phone-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 120vh; /* Ensures image fits well on the screen */
+  /* Removed: transition: opacity 0.2s ease-in-out; as the image is now static */
+}
+
 :root {
   --bg: #fff7ef;
   --btn-collapsed: #ffd95c;
@@ -1393,13 +1467,17 @@ hr {
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     height: auto;
-    min-height: auto;
+    min-height: 0;
     padding: 0;
     background: none;
     box-shadow: none;
     margin-left: 0;
     margin-right: 0;
     width: 100%;
+  }
+  .container {
+    padding-left: 0.25rem !important;
+    padding-right: 0.25rem !important;
   }
   .accordion-wrapper::-webkit-scrollbar {
     display: none;
@@ -1409,7 +1487,7 @@ hr {
     scrollbar-width: none;
   }
   .acc-item {
-    padding: 12px;
+    padding: 5px 10px;
     flex: 0 0 calc(100% - 32px);
     width: 100%;
     margin-right: 16px;
@@ -1417,6 +1495,7 @@ hr {
     position: relative;
     scroll-snap-align: start;
     min-height: unset;
+    border: 3px solid #ff8a00;
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
@@ -1444,6 +1523,7 @@ hr {
   }
   .acc-content {
     position: static;
+    bottom: auto;
     max-width: 100%;
     padding: 0;
     overflow: visible;
@@ -1456,7 +1536,7 @@ hr {
     pointer-events: auto;
   }
   .acc-item.active .acc-content {
-    padding: 5px 5px !important;
+    padding: 0;
   }
   .acc-text {
     width: 100%;
@@ -1473,7 +1553,7 @@ hr {
     width: 100%;
     height: auto;
     min-width: unset;
-    min-height: 140px;
+    min-height: 0;
     flex-shrink: 0;
     background: #e6e6e6;
   }
