@@ -1475,6 +1475,9 @@ hr {
     opacity: 1;
     pointer-events: auto;
   }
+  .acc-item.active .acc-content {
+    padding: 5px 5px !important;
+  }
   /* Inner Text Block */
   .acc-text {
     width: 100%;
