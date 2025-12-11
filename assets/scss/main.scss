@@ -1433,10 +1433,7 @@ hr {
 //AC-255 CSS ends here
 
 //AC-254-B CSS Starts here
- /* =========================================
-   1. Global Variables & Base Styles
-   ========================================= */
-:root{
+ :root{
     --bg: #fff7ef;
     --btn-collapsed: #ffd95c; 
     --btn-active: #ffa000; 
@@ -1445,7 +1442,6 @@ hr {
 
 /* =========================================
    2. Desktop Horizontal Accordion Styles
-   (Active for screen width > 768px)
    ========================================= */
 
 .accordion-wrapper {
@@ -1456,14 +1452,14 @@ hr {
     border-radius:8px;
     background: var(--panel-bg);
     box-shadow: 0 0 0 1px rgba(0,0,0,0.03) inset;
-    overflow: hidden; /* Crucial for desktop animation */
+    overflow: hidden; 
 }
 
 /* Default state for each accordion item (collapsed) */
 .acc-item{
     margin-right:5px; 
     border-radius:6px;
-    flex: 0 0 50px; /* Base width for collapsed item */
+    flex: 0 0 50px; 
     display:flex;
     align-items:center;
     justify-content:center;
@@ -1477,7 +1473,7 @@ hr {
 
 /* Active state for the expanded item */
 .acc-item.active{
-    flex: 1 1 0%; /* Expands to fill available space */
+    flex: 1 1 0%; 
     background: var(--btn-active);
     border: 2px solid #ffa000;
     border-radius: 5px;
@@ -1517,7 +1513,7 @@ hr {
     display:flex;
     align-items:center;
     gap:24px;
-    padding:28px 0; /* Padding will be applied when active */
+    padding:28px 0; 
     background: var(--panel-bg);
     transform: translateX(-12px);
     opacity: 0; 
@@ -1531,7 +1527,7 @@ hr {
     max-width:2000px;
     transform: translateX(0);
     opacity: 1; 
-    padding: 28px 32px; /* Apply padding when active */
+    padding: 28px 32px; 
     pointer-events: auto;
 }
 
@@ -1545,7 +1541,7 @@ hr {
 .acc-text p{ 
     margin:0; 
     color:#333; 
-    width:400px; /* Fixed width for text on desktop */
+    width:400px; 
     font-size: 0.85rem;
 }
 .acc-text .case{ margin-top:10px; }
@@ -1564,33 +1560,37 @@ hr {
     color:#777;
     font-size:14px;
 }
+.acc-img img {
+    width: 100%;
+    height: 100%; 
+    max-width: 100%; 
+    object-fit: cover; 
+    border-radius:5px;
+}
 
-/* Active title should be visible, though it's technically behind content */
 .acc-item.active .acc-title{ opacity:1; }
 
 
 /* =========================================
-   3. Mobile Swipe Slider Styles
-   (Active for screen width <= 768px)
+   3. Mobile Swipe Slider Styles (OPTIMIZED)
    ========================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     /* Container for horizontal swipe/scroll */
     .accordion-wrapper { 
         display: flex;
-        overflow-x: scroll; /* Enable horizontal swiping */
+        overflow-x: scroll; 
         overflow-y: hidden;
-        -webkit-overflow-scrolling: touch; /* iOS smooth scrolling */
-        scroll-snap-type: x mandatory; /* Snap cleanly to each item */
+        -webkit-overflow-scrolling: touch; 
+        scroll-snap-type: x mandatory; 
         height: auto; 
         min-height: auto;
-        padding: 0 16px; 
+        padding: 0; 
         background: none; 
         box-shadow: none;
-        /* Adjust wrapper width to cover container padding */
-        margin-left: -16px; 
-        margin-right: -16px;
-        width: calc(100% + 32px);
+        margin-left: 0; 
+        margin-right: 0;
+        width: 100%;
     }
     
     /* Hide scrollbar on mobile browsers */
@@ -1604,30 +1604,35 @@ hr {
     
     /* Each item becomes a full-width "slide" */
     .acc-item { 
-        flex: 0 0 100%; /* Important: Each item takes 100% of the viewport width */
+        /* OPTIMIZATION 1: Reduced padding */
+        padding: 12px; 
+        
+        flex: 0 0 calc(100% - 32px); 
         width: 100%;
         margin-right: 16px; 
         margin-left: 0;
         position: relative; 
         scroll-snap-align: start;
-        min-height: 400px; 
+        min-height: unset; 
         
-        /* Reset flex direction for content stacking */
         align-items: flex-start;
         justify-content: flex-start;
         flex-direction: column;
         
         background: var(--panel-bg); 
-        padding: 16px;
     }
-    
+
+    /* Add spacing to the first item */
+    .acc-item:first-child {
+        margin-left: 16px;
+    }
+
     /* Active item styling for mobile */
     .acc-item.active {
-        flex: 0 0 100%;
+        flex: 0 0 calc(100% - 32px); 
         background: var(--panel-bg);
-        border: none;
-        z-index: 10;
         border: 3px solid #ff8a00;
+        z-index: 10;
     }
     
     /* Title (Horizontal on Mobile) */
@@ -1637,9 +1642,9 @@ hr {
         writing-mode: horizontal-tb;
         transform: none;
         text-align: left;
-        font-size: 1.2rem;
+        font-size: 1.1rem; /* Slightly smaller font for title */
         padding: 0;
-        margin-bottom: 10px;
+        margin-bottom: 8px; /* Reduced margin */
         color: var(--btn-active);
     }
     
@@ -1650,9 +1655,10 @@ hr {
         padding: 0;
         overflow: visible;
         display: flex;
-        flex-direction: column; /* Stack text/image vertically */
+        flex-direction: column; 
         align-items: flex-start;
-        gap: 16px;
+        /* OPTIMIZATION 2: Reduced gap between text and image */
+        gap: 12px; 
         transform: none;
         opacity: 1; 
         pointer-events: auto;
@@ -1661,19 +1667,38 @@ hr {
     /* Inner Text Block */
     .acc-text {
         width: 100%;
+        /* OPTIMIZATION 3: Reduced gap within text block */
+        gap: 3px;
     }
     .acc-text p{ 
-        width: auto; /* Remove fixed width */
-        font-size: 0.9rem;
+        width: auto; 
+        font-size: 0.85rem; /* Smaller paragraph text */
     }
+    .acc-text .case{ 
+        /* OPTIMIZATION 4: Reduced margin above case study */
+        margin-top: 5px; 
+    }
+
 
     /* Inner Image Block */
     .acc-img {
         width: 100%;
-        height: 180px;
+        height: auto; 
         min-width: unset;
+        /* OPTIMIZATION 5: Significantly reduced minimum height for image container */
+        min-height: 140px; 
         flex-shrink: 0;
+        background:#e6e6e6;
+    }
+    
+    /* Image fluidity fix */
+    .acc-img img {
+        width: 100%;
+        height: auto;
+        max-width: 100%; 
+        display: block;
+        object-fit: contain; 
+        border-radius: 5px;
     }
 }
-    
-//AC-259 CSS Ends here
+//AC-254B CSS Ends here
