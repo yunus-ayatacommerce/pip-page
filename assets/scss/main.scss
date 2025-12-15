@@ -552,132 +552,256 @@ h6 {
 
 
 
+/* =====================================
+   NAV SCROLLBAR HIDE
+===================================== */
+
+.nav::-webkit-scrollbar {
+  display: none;
+}
 .nav {
-
-    /* Hide scrollbar for Webkit browsers (Chrome, Safari, Opera) */
-    &::-webkit-scrollbar {
-        display: none;
-        width: 0;
-        height: 0;
-    }
-
-    /* Hide scrollbar for IE and Edge */
-    -ms-overflow-style: none;
-
-    /* Hide scrollbar for Firefox */
-    scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-//.increased-height {
-//  min-height: calc(100% + 10px); 
-//}
+/* =====================================
+   COLORS & UTILITIES
+===================================== */
 
 .bg-light-yellow {
-    background-color: var(--bs-light-yellow);
+  background-color: var(--bs-light-yellow);
 }
 
 .col-4-ded {
-    width: 30.00% !important;
+  width: 30% !important;
 }
 
+/* =====================================
+   NAV PILLS
+===================================== */
 
 .nav-pills .custom-nav-link {
-    color: #000;
-    border-bottom: 3px solid transparent;
-    padding: 10px 15px;
-    margin: 0 5px;
-    border-radius: 5px 5px 0px 0px;
-    transition: border-bottom-color 0.3s ease, color 0.3s ease;
-    font-weight: 700;
+  color: #000;
+  border-bottom: 3px solid transparent;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 6px 6px 0 0;
+  transition: all 0.3s ease;
+  font-weight: 700;
+  white-space: nowrap;
 }
-
 
 .nav-pills .custom-nav-link.active,
 .nav-pills .custom-nav-link:hover {
-    background-color: #000;
-    color: #fff;
-
+  background-color: #000;
+  color: #fff;
 }
 
+/* =====================================
+   CARDS (DESKTOP UNCHANGED)
+===================================== */
 
 .card-left {
-    background-color: #FFEEB5;
-    color: #000;
-    border: 1px solid #FFD95C;
-    border-radius: 0px 10px 10px 0px;
+  background-color: #FFEEB5;
+  color: #000;
+  border: 1px solid #FFD95C;
+  border-radius: 0 12px 12px 0;
 }
-
 
 .card-right {
-    background-color: #FFD95C;
-    color: #000;
-    border: 3px solid solid;
-    border-radius: 10px 0px 0px 10px;
-
+  background-color: #FFD95C;
+  color: #000;
+  border-radius: 12px 0 0 12px;
 }
 
-/* FIX: Ensures icon images inside the right card are 100% width on all views, especially mobile */
-.card-right img {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto;
-}
-
+/* =====================================
+   STAT BOXES – EQUAL HEIGHT
+===================================== */
 
 .stat-box {
-    background-color: #FFD95C;
-    color: #000;
-    padding: 30px 10px;
-    border-radius: 5px;
-    text-align: center;
-    line-height: 1.2;
-    min-height: 70px !important;
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-    
+  background-color: #FFD95C;
+  color: #000;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  min-height: 64px;
+  padding: 8px 6px !important;
+  border-radius: 6px;
 }
+
+.stat-box small {
+    line-height: 1.25;
+  font-weight: 600;
+  font-size: 0.75rem;
+  min-height: 50px !important;
+  align-content: center;
+}
+
+/* =====================================
+   REDUCE VERTICAL GAP
+===================================== */
+
+.tab-pane .row.pb-5 {
+  padding-bottom: 2rem !important;
+}
+
+/* =====================================
+   IMAGE UTILITIES
+===================================== */
 
 .icon-image-container {
-    width: 100%;
-    height: 150px;
-    margin-bottom: 1rem;
-
-}
-
-.fixed-height-row {
-    height: auto;
-    overflow: hidden;
+  width: 100%;
+  height: 150px;
+  margin-bottom: 1rem;
 }
 
 .call-back-img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .custom-image-style {
-    /* Base setting: 100% width on all screens (fills its parent column) */
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
-/* Media Query: Targets screens from medium (md) breakpoint and up (Desktop/Tablet) */
 @media (min-width: 768px) {
-    .custom-image-style {
-        /* This rule only applies on desktop/tablet */
-        max-width: 300px;
-        /* Constrain the image size to 300px on desktop/tablet */
-        display: block;
-        /* Required if setting max-width on an image */
-        margin: 0 auto;
-        /* Center the constrained image */
-    }
-
-
-
-
+  .custom-image-style {
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+  }
 }
+
+/* =====================================
+   MOBILE ONLY (≤576px)
+===================================== */
+
+@media (max-width: 576px) {
+
+  /* Header compression */
+  h1 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+  }
+
+  p {
+    font-size: 0.85rem;
+  }
+
+  /* Tabs tighter */
+  .nav-pills .custom-nav-link {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+
+  /* Cards spacing */
+  .card-left,
+  .card-right {
+    padding: 1rem !important;
+    border-radius: 12px;
+  }
+
+  .card-right {
+    margin-top: 12px;
+  }
+
+  /* Stats in one row */
+  .card-left .row.g-1 {
+    display: flex;
+    gap: 6px;
+  }
+
+  .card-left .row.g-1 > div {
+    flex: 1;
+  }
+
+  .stat-box {
+    min-height: auto;
+    font-size: 0.7rem;
+  }
+
+  /* Hide second success story */
+  .card-left .row > .col-md-6:last-child {
+    display: none;
+  }
+
+  /* ===============================
+     MOBILE IMAGE 25% / TEXT 75%
+     (SECOND SECTION ONLY)
+  =============================== */
+
+  .card-right .row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .card-right .row > .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .card-right .row > .col-md-9 {
+    flex: 0 0 75%;
+    max-width: 71%;
+  }
+
+  .card-right img {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Reduce bottom gap further */
+  .tab-pane .row.pb-5 {
+    padding-bottom: 1.25rem !important;
+  }
+
+  /* CTA button */
+  .card-right button {
+    font-size: 0.8rem;
+    padding: 8px 10px;
+  }
+}
+
+/* ==================================================
+   MOBILE ONLY – FORCE IMAGE 25% / TEXT 75%
+   USING CSS GRID (BOOTSTRAP-PROOF)
+================================================== */
+@media (max-width: 576px) {
+
+  /* Target ONLY Industry Challenges / Solutions rows */
+  .card-right .container > .row {
+    display: grid !important;
+    grid-template-columns: 25% 75%;
+    column-gap: 12px;
+    align-items: start;
+  }
+
+  /* Neutralize Bootstrap column behavior */
+  .card-right .container > .row > [class*="col-"] {
+    width: auto !important;
+    max-width: none !important;
+    flex: none !important;
+  }
+
+  /* Image sizing */
+  .card-right img {
+    width: 100% !important;
+    height: auto;
+    object-fit: contain;
+    max-width: none !important;
+  }
+}
+
+
+
 
 
 
@@ -1160,18 +1284,18 @@ hr {
     .comparison-side-left {
         width: 100%;
         border-radius: 0.8rem 0.8rem 0 0;
-        padding: 20px;
+        padding: 10px;
         background-color: #fff5f5;
         border-bottom: 1px solid #FFB4B4;
-        min-height: 100px;
+        min-height: 50px;
     }
 
     .comparison-side-right {
         width: 100%;
         border-radius: 0 0 0.8rem 0.8rem;
-        padding: 20px;
+        padding: 10px;
         background-color: #f2fff0;
-        min-height: 100px;
+        min-height: 50px;
     }
 
     /* Since we rely on JS to remove the 'active' class on click, 
@@ -1513,7 +1637,7 @@ hr {
 }
 
 .ereceipt-phone-image {
-    max-width: 100%;
+    max-width: 92%;
     height: auto;
     max-height: 120vh;
     /* Setting transition for smooth opacity change controlled by JS */
@@ -1794,3 +1918,63 @@ hr {
     }
 }
 //AC-254B CSS Ends here
+
+//AC-256 starts here
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 400px; /* Set a fixed height for the card container */
+    perspective: 1000px; /* This defines the 3D space */
+    border: none;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s; /* Duration of the flip animation */
+    transform-style: preserve-3d; /* Key to the 3D effect */
+    cursor: pointer; /* Indicate it's clickable */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0.375rem; /* Matches Bootstrap's .rounded */
+}
+
+/* 4. Flip on click (JavaScript adds the 'is-flipped' class) */
+.flip-card-inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Hide the back side by default */
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+    /* Ensure content stays within borders */
+    overflow: hidden; 
+    border-radius: 0.375rem; 
+    text-align: left;
+}
+
+.flip-card-front {
+    /* The front side (image) faces the user */
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.flip-card-back {
+    /* The back side (text) is rotated 180deg to start */
+    transform: rotateY(180deg);
+}
+
+/* Optional: Styling for the placeholder */
+.img-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+//ac-256 ends here
