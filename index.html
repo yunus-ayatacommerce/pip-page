@@ -1728,24 +1728,24 @@
     <!--AC259 Ends Here-->
 
 <!--AC-255 Starts Here-->
- <div class="container-fluid ereceipt-bg mt-5">
+<div class="container-fluid ereceipt-bg mt-5">
     <div class="container ereceipt-main-container">
         <div class="text-center mb-5">
-            <h1 class="fw-bold">Turn your Receipt into Powerful <br> Engagement Tool</h1>
+            <h1 class="fw-bold">Turn your Receipt into Powerful <br> Customer Engagement Tool</h1>
         </div>
 
         <div class="row">
             <div class="col-md-4">
                 <h3 class="ereceipt-section-title mx-4">How it Looks</h3>
                 <ul class="ereceipt-content-list" id="how-it-looks">
-                    <li data-image="custom-brand.png" class="d-flex align-items-start active">
-                        <span class="ereceipt-icon-dot mt-1"></span>
+                    <li data-image-key="custom-brand" class="d-flex align-items-start active" onmouseover="changeReceiptImage(this)">
+                        <span class="ereceipt-icon-dot mt-1"></span> 
                         <div>
                             <p class="fw-bold mb-0">Custom Brand</p>
                             <small>Showcase your logo and colors on every receipt for consistent branding.</small>
                         </div>
                     </li>
-                    <li data-image="vouchers.png" class="d-flex align-items-start">
+                    <li data-image-key="vouchers" class="d-flex align-items-start" onmouseover="changeReceiptImage(this)">
                         <span class="ereceipt-icon-dot mt-1"></span>
                         <div>
                             <p class="fw-bold mb-0">Vouchers</p>
@@ -1753,14 +1753,14 @@
                                 purchases.</small>
                         </div>
                     </li>
-                    <li data-image="co2-emissions.png" class="d-flex align-items-start">
+                    <li data-image-key="co2-emissions" class="d-flex align-items-start" onmouseover="changeReceiptImage(this)">
                         <span class="ereceipt-icon-dot mt-1"></span>
                         <div>
                             <p class="fw-bold mb-0">CO2 Emissions</p>
                             <small>Detail the carbon footprint for each purchase, promoting eco-awareness.</small>
                         </div>
                     </li>
-                    <li data-image="loyalty.png" class="d-flex align-items-start">
+                    <li data-image-key="loyalty" class="d-flex align-items-start" onmouseover="changeReceiptImage(this)">
                         <span class="ereceipt-icon-dot mt-1"></span>
                         <div>
                             <p class="fw-bold mb-0">Loyalty</p>
@@ -1768,7 +1768,7 @@
                                 visits.</small>
                         </div>
                     </li>
-                    <li data-image="feedback.png" class="d-flex align-items-start">
+                    <li data-image-key="feedback" class="d-flex align-items-start" onmouseover="changeReceiptImage(this)">
                         <span class="ereceipt-icon-dot mt-1"></span>
                         <div>
                             <p class="fw-bold mb-0">Feedback</p>
@@ -1776,13 +1776,12 @@
                                 improvement.</small>
                         </div>
                     </li>
-                    <li data-image="transaction-data.png" class="d-flex align-items-start">
+                    <li data-image-key="transaction-data" class="d-flex align-items-start" onmouseover="changeReceiptImage(this)">
                         <span class="ereceipt-icon-dot mt-1"></span>
                         <div>
                             <p class="fw-bold mb-0">Transaction Data</p>
                             <small>See the transaction data, Digitalizing both ESR and payment terminal receipts
-                                into
-                                one.</small>
+                                into one.</small>
                         </div>
                     </li>
                 </ul>
@@ -1790,72 +1789,54 @@
 
             <div class="col-md-4 d-flex justify-content-center">
                 <div class="ereceipt-phone-display">
-                    <img src="./assets/images/luxury-invoice-in-mobile 1.png" alt="Digital Receipt Display" class="ereceipt-phone-image">
+                    <img id="ereceipt-display-img" src="./assets/images/luxury-invoice-in-mobile 1.png" alt="Digital Receipt Display" class="ereceipt-phone-image">
                 </div>
             </div>
 
             <div class="col-md-4">
                 <h3 class="ereceipt-section-title mx-4">How it Works</h3>
                 <ul class="ereceipt-content-list" id="how-it-works-list">
-                    <li class="d-flex align-items-start">
-                        <span class="ereceipt-icon-dot mt-1"></span>
-                        <div>
+                    <li data-image-key="easy-setup" class="d-flex align-items-start" onmouseover="changeReceiptImage(this)">
+                        <span class="ereceipt-icon-dot mt-1"></span> <div>
                             <p class="fw-bold mb-0">Easy Setup</p>
-                            <small>Seamlessly integrates with a wide range of POS systems and is compatible with
-                                major
-                                card providers like Visa and Mastercard, ensuring a quick setup process that only
-                                takes
-                                a few minutes.</small>
+                            <small>Seamlessly integrates with a wide range of POS systems...</small>
                         </div>
                     </li>
-                    <li class="d-flex align-items-start">
-                        <span class="ereceipt-icon-dot mt-1"></span>
-                        <div>
+                    <li data-image-key="flexible-option" class="d-flex align-items-start" onmouseover="changeReceiptImage(this)">
+                        <span class="ereceipt-icon-dot mt-1"></span> <div>
                             <p class="fw-bold mb-0">Flexible Digital Receipt Option</p>
                             <small>Detail the carbon footprint for each purchase, promoting eco-awareness.</small>
                         </div>
                     </li>
-                    <li class="d-flex align-items-start">
-                        <span class="ereceipt-icon-ring mt-1"></span>
-                        <div>
+                    <li data-image-key="wcard-linking" class="d-flex align-items-start" onmouseover="changeReceiptImage(this)">
+                        <span class="ereceipt-icon-ring mt-1"></span> <div>
                             <p class="fw-bold mb-0">wCard Linking</p>
                             <small>Customers can register their payment cards for automatic digital receipt delivery
                                 after each transaction.</small>
                         </div>
                     </li>
-                    <li class="d-flex align-items-start">
-                        <span class="ereceipt-icon-ring mt-1"></span>
-                        <div>
+                    <li data-image-key="qr-code" class="d-flex align-items-start" onmouseover="changeReceiptImage(this)">
+                        <span class="ereceipt-icon-ring mt-1"></span> <div>
                             <p class="fw-bold mb-0">QR Code</p>
-                            <small>Customers can scan QR codes from external facing customer displays or payment
-                                terminals.</small>
+                            <small>Customers can scan QR codes from external facing customer displays...</small>
                         </div>
                     </li>
-                    <li class="d-flex align-items-start">
-                        <span class="ereceipt-icon-ring mt-1"></span>
-                        <div>
+                    <li data-image-key="nfc" class="d-flex align-items-start" onmouseover="changeReceiptImage(this)">
+                        <span class="ereceipt-icon-ring mt-1"></span> <div>
                             <p class="fw-bold mb-0">NFC</p>
-                            <small>Customers hold their mobile device close to the payment terminal which will
-                                automatically open the digital receipt in the web browser.</small>
+                            <small>Customers hold their mobile device close to the payment terminal...</small>
                         </div>
                     </li>
-                    <li class="d-flex align-items-start">
-                        <span class="ereceipt-icon-ring mt-1"></span>
-                        <div>
+                    <li data-image-key="fetch-later" class="d-flex align-items-start" onmouseover="changeReceiptImage(this)">
+                        <span class="ereceipt-icon-ring mt-1"></span> <div>
                             <p class="fw-bold mb-0">Fetch Later</p>
-                            <small>Customers who forgot to take a receipt in the shop and would still need one can
-                                fetch
-                                a receipt themselves through the web service.</small>
+                            <small>Customers who forgot to take a receipt in the shop...</small>
                         </div>
                     </li>
-                    <li class="d-flex align-items-start">
-                        <span class="ereceipt-icon-dot mt-1"></span>
-                        <div>
+                    <li data-image-key="going-global" class="d-flex align-items-start" onmouseover="changeReceiptImage(this)">
+                        <span class="ereceipt-icon-dot mt-1"></span> <div>
                             <p class="fw-bold mb-0">Benefits of Going Global</p>
-                            <p><small>Eliminate paper receipts, making transactions more eco-friendly & efficient.
-                                    Customize digital
-                                    receipts with offers, promotion & loyalty stamps to enhance customer
-                                    engagement.</small></p>
+                            <p><small>Eliminate paper receipts, making transactions more eco-friendly...</small></p>
                         </div>
                     </li>
                 </ul>
@@ -1864,56 +1845,70 @@
     </div>
 </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const listItems = document.querySelectorAll('#how-it-looks li');
-            const middleImage = document.getElementById('middle-image');
+    // 1. Image Map for all features (including placeholder URLs)
+    const imageMap = {
+        // How it Looks (Left Column)
+        'custom-brand': './assets/images/luxury-invoice-in-mobile 1.png', // Original/Default Image
+        'vouchers': './assets/images/vouchers.png',
+        'co2-emissions': './assets/images/co2.png',
+        'loyalty': './assets/images/loyalty.png',
+        'feedback': './assets/images/feedback.png',
+        'transaction-data': './assets/images/txn-data.png',
+        
+        // How it Works (Right Column) - You would replace these with your specific images
+        'easy-setup': './assets/images/easy-setup.png',
+        'flexible-option': './assets/images/flex-options.png',
+        'wcard-linking': './assets/images/w-card.png',
+        'qr-code': './assets/images/qr.png',
+        'nfc': './assets/images/nfc.png',
+        'fetch-later': './assets/images/fetch-later.png',
+        'going-global': './assets/images/going-global.png'
+    };
 
+    // Store the currently active key to prevent unnecessary DOM manipulation
+    let currentActiveKey = 'custom-brand'; 
+    let imageElement = null; // Will store the image DOM element
 
-            const imageMap = {
-                'custom-brand.png': '/assets/images/Mobile-mockup.png',
-                'vouchers.png': 'https://via.placeholder.com/300x550/90EE90/000000?text=Vouchers+Receipt',
-                'co2-emissions.png': 'https://via.placeholder.com/300x550/F08080/000000?text=CO2+Emissions+Receipt',
-                'loyalty.png': 'https://via.placeholder.com/300x550/FFD700/000000?text=Loyalty+Stamp+Receipt',
-                'feedback.png': 'https://via.placeholder.com/300x550/DDA0DD/000000?text=Feedback+Option+Receipt',
-                'transaction-data.png': 'https://via.placeholder.com/300x550/B0C4DE/000000?text=Transaction+Data+Receipt',
-            };
+    /**
+     * Handles the mouseover event on the list items to change the image.
+     * @param {HTMLElement} hoveredItem The list item that was hovered over.
+     */
+    function changeReceiptImage(hoveredItem) {
+        const targetKey = hoveredItem.getAttribute('data-image-key');
 
+        // Check if the image element is available and if the key is different
+        if (!imageElement) {
+            imageElement = document.getElementById('ereceipt-display-img');
+        }
+        
+        if (!imageElement || targetKey === currentActiveKey) {
+            return; // Exit if no change is needed or element not found
+        }
+        
+        const targetUrl = imageMap[targetKey];
 
+        // 1. Update list item highlighting (removes 'active' from all, adds to current)
+        const allListItems = document.querySelectorAll('.ereceipt-content-list li');
+        allListItems.forEach(li => li.classList.remove('active'));
+        hoveredItem.classList.add('active');
 
+        // 2. Smooth Transition: Fade out, change source, fade in
+        imageElement.classList.add('fade-out'); // Trigger the opacity: 0 transition
+        
+        setTimeout(() => {
+            imageElement.src = targetUrl; // Change the image source while it's hidden
+            imageElement.classList.remove('fade-out'); // Remove class to trigger opacity: 1 transition
+        }, 300); // Wait for the CSS transition (0.3s) to complete before switching src
 
-            function switchImage(clickedItem) {
-                const targetImageFile = clickedItem.getAttribute('data-image');
-                const targetImageUrl = imageMap[targetImageFile];
+        // 3. Update the state
+        currentActiveKey = targetKey;
+    }
 
-                if (targetImageUrl) {
-                    // 1. Update list item highlighting (using standard 'active' class)
-                    listItems.forEach(li => li.classList.remove('active'));
-                    clickedItem.classList.add('active');
+    // Optional: Add a listener for mouseout to reset to the default image, 
+    // or just leave it on the last hovered item for clarity.
+    // For this example, we keep it on the last hovered item, which is a better UX.
 
-                    // 2. Smooth transition: Fade out, change source, fade in
-                    middleImage.style.opacity = '0';
-                    setTimeout(() => {
-                        middleImage.src = targetImageUrl;
-                        middleImage.style.opacity = '1';
-                    }, 200); // 200ms matches the CSS transition time
-                }
-            }
-
-            // Attach event listeners to all list items in the "How it Looks" column
-            listItems.forEach(item => {
-                item.addEventListener('click', function () {
-                    switchImage(this);
-                });
-            });
-
-            // Initialize the display with the image corresponding to the initially active item
-            const initialActiveItem = document.querySelector('#how-it-looks li.active');
-            if (initialActiveItem) {
-                const initialImageFile = initialActiveItem.getAttribute('data-image');
-                middleImage.src = imageMap[initialImageFile];
-            }
-        });
-    </script>
+</script>
 <!--AC-255 Ends Here-->
 
 

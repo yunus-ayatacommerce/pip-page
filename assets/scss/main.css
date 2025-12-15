@@ -1250,6 +1250,8 @@ hr {
   }
 }
 /* Approximate background color from the image */
+/* Existing CSS for .ereceipt-phone-image is modified */
+/* --- Base Container Styling --- */
 .ereceipt-bg {
   background-color: #FFEEB5;
 }
@@ -1259,48 +1261,6 @@ hr {
   padding: 50px 20px;
 }
 
-/* List Styling */
-.ereceipt-content-list {
-  list-style: none; /* Removes default bullet points */
-  padding-left: 0;
-}
-
-.ereceipt-content-list li {
-  margin-bottom: 25px;
-  cursor: pointer; /* Indicates clickable elements */
-  /* Keeping hover for visual feedback on the list items */
-  transition: color 0.2s;
-  line-height: 1.2;
-}
-
-/* Highlight color for active/hover */
-/* List items will still highlight on hover/active, but won't trigger image change */
-.ereceipt-content-list li:hover, .ereceipt-content-list li.active {
-  color: #FF8800;
-}
-
-/* Style for the colored dot icon */
-.ereceipt-icon-dot {
-  height: 12px;
-  width: 12px;
-  background-color: #FF8800; /* Dot color */
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 15px;
-  flex-shrink: 0; /* Prevents dot from shrinking */
-}
-
-.ereceipt-icon-ring {
-  height: 12px;
-  width: 12px;
-  background-color: transparent;
-  border: 1px solid #ff8800;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 15px;
-  flex-shrink: 0; /* Prevents dot from shrinking */
-}
-
 /* Styling for Headings */
 .ereceipt-section-title {
   font-size: 1.75rem;
@@ -1308,6 +1268,59 @@ hr {
   margin-bottom: 25px;
 }
 
+/* --- List Styling (Fixes Applied Here) --- */
+.ereceipt-content-list {
+  list-style: none; /* Removes default bullet points */
+  padding-left: 0;
+}
+
+.ereceipt-content-list li {
+  margin-bottom: 25px;
+  cursor: pointer; /* Indicates clickable elements for hover */
+  transition: color 0.2s;
+  line-height: 1.2;
+  /* Enforcing flex display against Bootstrap defaults for alignment */
+  display: flex !important;
+  align-items: flex-start !important;
+}
+
+/* Highlight color for active/hover */
+.ereceipt-content-list li:hover,
+.ereceipt-content-list li.active {
+  color: #FF8800;
+}
+
+/* --- Bullet Point Styling (Specificity Applied) --- */
+/* Style for the colored dot icon (Solid) */
+.ereceipt-icon-dot {
+  height: 12px;
+  width: 12px;
+  background-color: #FF8800; /* Dot color */
+  border-radius: 50%;
+  /* Enforcing display to render the element */
+  display: inline-block !important;
+  margin-right: 15px;
+  flex-shrink: 0; /* Prevents dot from shrinking */
+  /* Adjusted top margin for better vertical alignment */
+  margin-top: 4px !important;
+}
+
+/* Style for the colored ring icon (Outline) */
+.ereceipt-icon-ring {
+  height: 12px;
+  width: 12px;
+  background-color: transparent;
+  border: 1px solid #ff8800;
+  border-radius: 50%;
+  /* Enforcing display to render the element */
+  display: inline-block !important;
+  margin-right: 15px;
+  flex-shrink: 0; /* Prevents dot from shrinking */
+  /* Adjusted top margin for better vertical alignment */
+  margin-top: 4px !important;
+}
+
+/* --- Central Image Display Styling --- */
 /* Image container styling to fit the phone image */
 .ereceipt-phone-display {
   display: flex;
@@ -1319,8 +1332,14 @@ hr {
 .ereceipt-phone-image {
   max-width: 100%;
   height: auto;
-  max-height: 120vh; /* Ensures image fits well on the screen */
-  /* Removed: transition: opacity 0.2s ease-in-out; as the image is now static */
+  max-height: 120vh;
+  /* Setting transition for smooth opacity change controlled by JS */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Class used by JS to trigger the smooth fade-out effect */
+.ereceipt-phone-image.fade-out {
+  opacity: 0;
 }
 
 :root {
