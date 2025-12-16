@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kaushan+Script&display=swap");
 .logobox {
   width: 140px;
@@ -503,9 +502,6 @@ h6 {
   margin-bottom: 30px;
 }
 
-/* =====================================
-   NAV SCROLLBAR HIDE
-===================================== */
 .nav::-webkit-scrollbar {
   display: none;
 }
@@ -515,9 +511,6 @@ h6 {
   scrollbar-width: none;
 }
 
-/* =====================================
-   COLORS & UTILITIES
-===================================== */
 .bg-light-yellow {
   background-color: var(--bs-light-yellow);
 }
@@ -526,9 +519,6 @@ h6 {
   width: 30% !important;
 }
 
-/* =====================================
-   NAV PILLS
-===================================== */
 .nav-pills .custom-nav-link {
   color: #000;
   border-bottom: 3px solid transparent;
@@ -546,9 +536,6 @@ h6 {
   color: #fff;
 }
 
-/* =====================================
-   CARDS (DESKTOP UNCHANGED)
-===================================== */
 .card-left {
   background-color: #FFEEB5;
   color: #000;
@@ -562,9 +549,6 @@ h6 {
   border-radius: 12px 0 0 12px;
 }
 
-/* =====================================
-   STAT BOXES – EQUAL HEIGHT
-===================================== */
 .stat-box {
   background-color: #FFD95C;
   color: #000;
@@ -585,16 +569,10 @@ h6 {
   align-content: center;
 }
 
-/* =====================================
-   REDUCE VERTICAL GAP
-===================================== */
 .tab-pane .row.pb-5 {
   padding-bottom: 2rem !important;
 }
 
-/* =====================================
-   IMAGE UTILITIES
-===================================== */
 .icon-image-container {
   width: 100%;
   height: 150px;
@@ -620,9 +598,6 @@ h6 {
     display: block;
   }
 }
-/* =====================================
-   MOBILE ONLY (≤576px)
-===================================== */
 @media (max-width: 576px) {
   /* Header compression */
   h1 {
@@ -662,10 +637,6 @@ h6 {
   .card-left .row > .col-md-6:last-child {
     display: none;
   }
-  /* ===============================
-     MOBILE IMAGE 25% / TEXT 75%
-     (SECOND SECTION ONLY)
-  =============================== */
   .card-right .row {
     display: flex;
     align-items: flex-start;
@@ -696,12 +667,7 @@ h6 {
     padding: 8px 10px;
   }
 }
-/* ==================================================
-   MOBILE ONLY – FORCE IMAGE 25% / TEXT 75%
-   USING CSS GRID (BOOTSTRAP-PROOF)
-================================================== */
 @media (max-width: 576px) {
-  /* Target ONLY Industry Challenges / Solutions rows */
   .card-right .container > .row {
     display: grid !important;
     grid-template-columns: 25% 75%;
@@ -709,13 +675,11 @@ h6 {
          column-gap: 12px;
     align-items: start;
   }
-  /* Neutralize Bootstrap column behavior */
   .card-right .container > .row > [class*=col-] {
     width: auto !important;
     max-width: none !important;
     flex: none !important;
   }
-  /* Image sizing */
   .card-right img {
     width: 100% !important;
     height: auto;
@@ -732,7 +696,6 @@ h6 {
   aspect-ratio: 1/1;
 }
 
-/* --- FLIP CARD CORE STYLES --- */
 .flip-card {
   background-color: transparent;
   width: 100%;
@@ -774,16 +737,13 @@ h6 {
   overflow: hidden;
 }
 
-/* --- FACE CONTENT STYLES --- */
 .flip-card-front img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  /* Ensures the image covers the entire front face */
 }
 
-/* Position the back face */
 .flip-card-back {
   transform: rotateY(180deg);
   display: flex;
@@ -797,23 +757,76 @@ h6 {
   background-color: #FFD95C !important;
 }
 
-.flip-card-front .btn {
-  border: 2px solid white;
-}
-
 .row {
   --bs-gutter-x: 0.5rem;
   --bs-gutter-y: 0.5rem;
 }
 
-.row > .col {
-  width: 33.3333% !important;
-  padding-left: calc(var(--bs-gutter-x) * 0.5);
-  padding-right: calc(var(--bs-gutter-x) * 0.5);
-  padding-top: 0;
-  padding-bottom: 0;
+.w-90 {
+  width: 93% !important;
 }
 
+.image-overlay-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 15px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: left;
+  pointer-events: none;
+}
+
+@media (max-width: 991.98px) {
+  h1.display-6 {
+    font-size: 2.25rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .text-secondary.mt-3 {
+    font-size: 0.9rem;
+    margin-top: 0.5rem !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  /* 2. SWIPER/CARD OPTIMIZATION */
+  .carousel-item .card-container {
+    padding: 0 0.5rem;
+    width: 100% !important;
+    height: 350px;
+    aspect-ratio: auto;
+  }
+  .flip-card {
+    height: 100%;
+    width: 100% !important;
+  }
+  .flip-card-back h3 {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .flip-card-back p {
+    font-size: 0.75rem !important;
+  }
+}
+@media (min-width: 992px) {
+  .row > .col {
+    width: 33.3333% !important;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+@media (min-width: 992px) {
+  .row > .col {
+    width: 33.3333% !important;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
 .custom-badge-top {
   background-color: #ffebbc;
   color: #5a4b27;
@@ -1194,10 +1207,10 @@ hr {
 .zoom-modal-content {
   margin: auto;
   display: block;
-  width: 90%;
+  width: 100%;
   max-width: 900px;
   position: relative;
-  padding: 20px;
+  padding: 5px;
 }
 
 /* The Zoomed Image */
@@ -1214,8 +1227,8 @@ hr {
 /* Close Button */
 .zoom-close-button {
   position: absolute;
-  top: -20px;
-  right: 0px;
+  top: -35px;
+  right: 20px;
   color: #fff;
   font-size: 40px;
   font-weight: bold;
@@ -1258,6 +1271,7 @@ hr {
   transition: background-color 0.2s;
   /* Initially hidden for desktop */
   display: none;
+  border: 1px solid #494949;
 }
 
 .zoom-button:hover {
